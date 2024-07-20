@@ -1,0 +1,50 @@
+@use 'sass:math';
+//colors
+$primary: #0F67B1;
+$secondary: #4535C1;
+$danger: #FF4C4C;
+$warning: #FFDE4D;
+$light: #EBF4F6;
+$dark: #45474B;
+
+//sass map -> map is a collection of key value pair inside parenthesis
+$colors : (
+    'primary' : $primary,
+    'secondary' : $secondary,
+    'danger': $danger,
+    'warning': $warning,
+    'light': $light,
+    'dark': $dark,
+    'white': white,
+    'black': black
+);
+
+// @debug map-get($map: $colors, $key: white );
+// @debug map-has-key($map: $colors, $key: white);
+// @debug map-has-key($map: $colors, $key: primary);
+// @debug map-has-key($map: $colors, $key: asdasd);
+// @debug map-values($map: $colors);
+// @debug map-keys($map: $colors);
+// // @debug map-remove($map: $colors, $key: white);
+// @debug map-merge($map1: $colors, $map2: (orange : orange) );
+
+
+//padding
+$base-padding : 1rem;
+
+//margin
+$base-margin: .75rem;
+
+//border
+$base-border-thickness: 1px;
+$base-border-radius: .5em;
+
+//box-shadow
+$base-box-shadow: 1px 10px 5px rgba(43, 40, 40, 0.1);
+
+//font-soze and variations
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * .5;
+$font-size-md: $base-font-size * 1.5;
+$font-size-lg: $base-font-size * 2;
+$font-size-xl: $base-font-size * 2;

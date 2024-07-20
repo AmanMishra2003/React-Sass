@@ -1,0 +1,37 @@
+@use 'sass:math';
+@debug math.div($base-border-radius,2);
+.card{
+    display: inline-block;
+    max-width: 30em;
+    padding: $base-padding;
+    margin: $base-margin;
+    border: $base-border-thickness solid #ddd;
+    border-radius:math.div($base-border-radius,2);
+    box-shadow: $base-box-shadow;
+
+    .card-title{
+        font-size: $font-size-lg;
+        font-weight: bold;
+        padding: $base-padding;
+        padding-bottom: 0;
+    }
+
+    .card-body{
+        padding: $base-padding;
+        font-size: $base-font-size;
+        text-align: justify;
+
+        .card-link{
+            display: block;
+            width: fit-content;
+            margin-top: calc($base-margin + 1rem);
+            text-decoration: none;
+            border-radius: $base-border-radius;
+            padding: calc($base-padding - .5rem) $base-padding;
+            &:hover{
+                box-shadow: $base-box-shadow;
+                transform: translateY(-5px);
+            }   
+        }
+    }
+}

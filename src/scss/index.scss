@@ -1,0 +1,27 @@
+@import 'variable';
+
+//colors
+@import 'colors';
+
+//components
+@import 'components/buttons';
+@import 'components/card';
+
+*,*:before,*:after{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+h1{
+    margin: 20px 0;
+}
+h3{
+    margin-top: 10px;
+}
+.stack-row{
+    display: flex;
+    gap:20px;
+}
+.stack-column{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}

@@ -1,0 +1,18 @@
+@each $key, $val in $colors{
+    .btn-#{$key}{
+        background-color: $val;
+        padding: calc($base-padding - 0.5rem) $base-padding ;
+        border-radius: .25em;
+        border: none;
+        transition: 200ms;
+        @if $key == 'white' or $key == 'light' {
+            color: black;
+        }@else{
+            color: white;
+        }
+
+        &:hover{
+            background-color: darken($val, 20%);
+        }
+    }
+}
