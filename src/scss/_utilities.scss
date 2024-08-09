@@ -1,0 +1,58 @@
+@use 'sass:math';
+
+$utilities :(
+    'padding': (
+        'prefix': 'p',
+        'values' :(
+            "0" : 0,
+            "1" : $base-padding * 1,
+            "2" : $base-padding * 2,
+            "3" : $base-padding * 4,
+            "4" : $base-padding * 6,
+            "5" : $base-padding * 8,
+        )
+    ),
+    'padding-left': (
+        'prefix': 'pl',
+        'values' :(
+            "0" : 0,
+            "1" : $base-padding * 1,
+            "2" : $base-padding * 2,
+            "3" : $base-padding * 4,
+            "4" : $base-padding * 6,
+            "5" : $base-padding * 8,
+        )
+    ),
+    'border-radius':(
+        'prefix' : 'rounded',
+        'values' :(
+            // 'default' :$base-border-radius,
+            "0" : 0,
+            "sm" : $base-border-radius * 1,
+            "lg" : $base-border-radius * 2,
+            "rounded" : $base-border-radius * 4,
+            'circle' : 50%,
+        )
+    )
+);
+
+@each $property , $map in $utilities{
+    $prefix: map-get($map, 'prefix');
+    $values: map-get($map, 'values');
+
+    @each $k, $v in $values{
+        @if($k=='default'){
+             .#{$prefix}{
+                #{$property}:#{$v};
+             }
+            //  @debug ".#{$prefix}{#{$property}:#{$v};}"
+        }@else{
+            .#{$prefix}-#{$k}{
+                #{$property}:#{$v};
+            }
+            // @debug ".#{$prefix}-#{$k}{#{$property}:#{$v};}"
+        }
+    }
+
+    
+}

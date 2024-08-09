@@ -1,11 +1,18 @@
+@import 'function';
 @import 'variable';
 
+@import 'utilities';
+@import 'breakpoint';
+@import 'grid';
 //colors
 @import 'colors';
+
 
 //components
 @import 'components/buttons';
 @import 'components/card';
+@import 'components/navbar';
+
 
 *,*:before,*:after{
     margin: 0;padding: 0;box-sizing: border-box;

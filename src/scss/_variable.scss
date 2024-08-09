@@ -19,7 +19,7 @@ $colors : (
     'black': black
 );
 
-// @debug map-get($map: $colors, $key: white );
+@debug map-get($map: $colors, $key: 'white' );
 // @debug map-has-key($map: $colors, $key: white);
 // @debug map-has-key($map: $colors, $key: primary);
 // @debug map-has-key($map: $colors, $key: asdasd);

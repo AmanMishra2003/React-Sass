@@ -1,0 +1,25 @@
+%flex-alignment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar{
+    @extend %flex-alignment;
+    font-size: $base-font-size;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: $base-padding $base-padding*1.5;
+    .container{
+        @extend %flex-alignment;
+    }
+    @include md{
+        font-size: $font-size-md;
+    }
+}
+
+@each $key , $val in $colors{
+    .navbar-#{$key}{
+        @extend .navbar;
+        background-color: #{$val};
+    }
+}

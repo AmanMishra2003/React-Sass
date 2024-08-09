@@ -1,0 +1,9 @@
+@function comp-lighten($val){
+    $complement : complement($val);
+    $comp-lighten-color : lighten($complement, 30%);
+    @return $comp-lighten-color;
+}
+
+// @function justify-content($val){
+//     @return justify-content-#{$val};
+// }

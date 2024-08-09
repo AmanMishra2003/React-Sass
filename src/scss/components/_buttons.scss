@@ -1,10 +1,21 @@
+@mixin btn($bg-color: #e2e2e2, $border:none){
+    cursor: pointer;
+    display: inline-block;
+    padding: calc($base-padding - 0.5rem) $base-padding ;
+    border-radius: $base-border-radius;
+    border: none;
+    transition: 200ms;
+    background-color: $bg-color;
+    border: $border;
+}
+
+.btn{
+    @include btn;
+}
+
 @each $key, $val in $colors{
     .btn-#{$key}{
-        background-color: $val;
-        padding: calc($base-padding - 0.5rem) $base-padding ;
-        border-radius: .25em;
-        border: none;
-        transition: 200ms;
+        @include btn($val, none);
         @if $key == 'white' or $key == 'light' {
             color: black;
         }@else{
@@ -13,6 +24,23 @@
 
         &:hover{
             background-color: darken($val, 20%);
+        }
+    }
+
+    .btn-outlined-#{$key}{
+        @include btn(transparent, $base-border-thickness solid $val);
+        &:hover{
+            background-color: $val;
+            color: white;
+        }
+    }
+
+    .btn-complement-#{$key}{
+        @include btn($val);
+        color: comp-lighten($val);
+        &:hover{
+            background-color: comp-lighten($val);
+            color: white;
         }
     }
 }
